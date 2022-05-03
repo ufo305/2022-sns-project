@@ -22,11 +22,15 @@ body{
 .can{
     z-index : -1;
     position: absolute;
+    margin : 0 auto;
+
+    /*     
     margin-left : auto;
     margin-right : auto;
+     */
 }
 
-.go_to_show{
+.thirsty{
     text-align : center;
     font-size : 100px;
     left : 50%;

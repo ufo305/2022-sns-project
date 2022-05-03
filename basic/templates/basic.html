@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style_mainpage.css' %}">
+    <st
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
+    </style>
+    <style>
+        ::selection {
+            background-color: #ec9119;
+            color: rgb(31, 109, 182);
+        }
+    </style>
+    <style>
+    .thirsty:hover {
+        background: linear-gradient(to Top, #ff60dd, rgba(28, 115, 255, 0.575));
+        color: transparent;
+        -webkit-background-clip: text;
+    }
+    </style>
+</head>
+<body>
+    {% include 'shared/_navbar.html' %}
+
+    <section class="container">
+        {% block content %}
+        
+        {% endblock %}
+    </section>
+</body>
+</html>
