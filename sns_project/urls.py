@@ -18,7 +18,27 @@ from django.urls import path
 from main import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.showmain),
-    path('show/', views.showintroduce),
+    #path('admin/', admin.site.urls),
+    #path('', views.showmain),
+    #path('show/', views.showintroduce),
+    
+    
+    #session
+        path('admin/', admin.site.urls),
+    #mainpage URL 연결하기 with 별명사용
+    path('',views.showmain, name="showmain"),
+    
+    # firstpage URL 연결하기 with 별명사용
+    path('firstpage/',views.showfirst, name="showfirst"),
+    
+    # secondpage URL 연결하기 with 별명사용
+    path('secondpage/',views.showsecond, name="showsecond"),
+    
+    #path-converter
+    path('<int:id>',views.detail, name="detail"),
+    
+    path('new/',views.new, name="new"),
+    
+    path('create/',views.create, name="create"),
+    
 ]

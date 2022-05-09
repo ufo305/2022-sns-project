@@ -1,13 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-        <div class="can">
-            <a href="/show">
-                <img style="max-width : 100%; height: auto;"
-                src="https://drive.google.com/uc?export=view&id=1XPqXNax--T6nAXqtWfhZI2Awo5X_2E-i">
-            </a>
+    <div class="can">
+        <a href="/show">
+            <img style="max-width : 100%; height: auto;"
+            src="https://drive.google.com/uc?export=view&id=1XPqXNax--T6nAXqtWfhZI2Awo5X_2E-i">
+        </a>
+    </div>
+    <div class='thirsty'>
+        &nbsp&nbsp&nbsp Are you thirsty?
+    </div>
+    
+    <h2><a href="{%url 'new'%}">글쓰기</a></h2>
+
+    <h1>글 목록</h1>
+        
+    <div>
+        {% for post in posts %}
+        <div>
+                <h3>{{post.title}}</h3>
+                {{post.writer}}<br>
+                {{post.summary}}<br>
+                <a href="{% url 'detail' post.id %}"> ...자세히</a><br>
         </div>
-        <div class='thirsty'>
-            &nbsp&nbsp&nbsp Are you thirsty?
-        </div>
+        {%endfor%}
+    </div>
+
 {% endblock %}
