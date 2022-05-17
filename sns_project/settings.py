@@ -19,10 +19,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-# Static css
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-%*)o+an04p=^di!lj3d+_d$)dtcd-u(vd9i1edtz1!8ax5do%q'
 
@@ -41,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main.apps.MainConfig',
+    'main'
 ]
 
 MIDDLEWARE = [
@@ -59,7 +55,7 @@ ROOT_URLCONF = 'sns_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'sns_project', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,7 +118,18 @@ USE_TZ = False
 
 STATIC_URL = 'static/'
 
+#STATIC 상속 설정
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'sns_project', 'static')
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
